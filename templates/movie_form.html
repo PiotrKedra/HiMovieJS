@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>HiMovie</title>
+  <meta name="description" content="Find your movie">
+  <meta name="author" content="HiMovie">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet"> 
+</head>
+
+<body>
+    <div class="div_start">
+        <div>
+            <h2>Podpowiedz nam trochę</h2>
+           
+                <div class="form-group">
+                    <label>Wybierz kategorię</label>
+                    <select class="form-control" id="category">
+                        <option>Komedia</option>
+                        <option>Dramat</option>
+                        <option>Sci-Fi</option>
+                    </select>
+                    <label>Wybierz przedział lat</label>
+                    <div class="div_year">
+                        <label class="lable_year" style="padding-top: 0; font-size: 1rem;">Start</label>
+                        <select class="form-control" id="start">
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                        </select>
+                        <label class="lable_year" style="padding-top: 0; font-size: 1rem;">Koniec</label> 
+                        <select class="form-control" id="end">
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                        </select>
+                    </div>
+                    <label>Podaj ocene filmu</label>
+                    <input type="text" class="form-control" id="rate">
+                    <label>Wybierz kraje produkcji</label>
+                    <select class="form-control" id="country">
+                        <option>USA</option>
+                        <option>Francja</option>
+                        <option>Hiszpania</option>
+                    </select>
+                </div>
+                <button class="btn btn_movie_form">Dalej</button>
+
+        </div>
+    </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../scripts/form_script.js"></script>
+
+</body>
+</html>
