@@ -23,6 +23,8 @@
                         <option>Dramat</option>
                         <option>Sci-Fi</option>
                     </select>
+                    <label for="category_intensity">Jak bardzo zależy ci na kategori?</label>
+                    <input type="range" class="custom-range" min="1" max="9" step="2" id="category_intensity">
                     <label>Wybierz przedział lat</label>
                     <div class="div_year">
                         <label class="lable_year" style="padding-top: 0; font-size: 1rem;">Start</label>
@@ -38,8 +40,12 @@
                             <option>2019</option>
                         </select>
                     </div>
+                    <label for="year_intensity">Jak bardzo zależy ci na przedziale czasowym?</label>
+                    <input type="range" class="custom-range" min="1" max="9" step="2" id="year_intensity">
                     <label>Podaj ocene filmu</label>
                     <input type="text" class="form-control" id="rate">
+                    <label for="rate_intensity">Jak bardzo zależy ci na ocenie filmu?</label>
+                    <input type="range" class="custom-range" min="1" max="9" step="2" id="rate_intensity">
                     <label>Wybierz kraje produkcji</label>
                     <select class="form-control" id="country">
                         <option>USA</option>
@@ -52,9 +58,9 @@
         </div>
     </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../scripts/form_script.js"></script>
 
 </body>
