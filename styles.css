@@ -48,3 +48,10 @@ label{
 .lable_year{
     margin-right: 1rem;
 }
+
+#movies{
+    border-color: black;
+    position: relative;
+    left:1%;
+    top:1%;
+}

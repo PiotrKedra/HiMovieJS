@@ -1,30 +1,12 @@
-// $(document).ready(function(){
-//     console.log('start l')
-//
-//
-//     console.log(movies);
-//
-//     var listItem = $('#movieList').html();
-//
-//     dataObject.forEach(buildNewList);
-//
-//     function buildNewList(item, index){
-//         var listItemTitle = $('.title', listItem);
-//         listItemTitle.html(item.title);
-//     }
-// })
-
-
-fetch('http://localhost:8080/get_top10')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(myJson) {
-        movies = JSON.stringify(myJson);
-    });
-
-
 function generateDynamicTable(){
+
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET","http://localhost:8080/pablito",false);
+    Httpreq.send(null);
+    var movies = JSON.parse(Httpreq.responseText)
+
+
+
 
     var noOfMovies = movies.length;
 
@@ -35,7 +17,6 @@ function generateDynamicTable(){
         table.setAttribute('border', '1');
         table.setAttribute('cellspacing', '0');
         table.setAttribute('cellpadding', '5');
-
         var col = []; // pusta tabela
         for( var i=0;i< noOfMovies; i++){
             for (var key in movies[i]){
