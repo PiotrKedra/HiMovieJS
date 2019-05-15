@@ -1,6 +1,6 @@
 body{
     font-family: 'Montserrat', sans-serif;
-    background-color: #DDDDDD;
+    background-color: white;
 }
 
 .div_start{
@@ -54,4 +54,17 @@ label{
     position: relative;
     left:1%;
     top:1%;
+}
+
+.custom-range{
+    color: black;
+}
+
+
+.btn{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    background-color: rgb(84, 148, 207);
+    width: 50%;
 }
