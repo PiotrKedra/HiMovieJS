@@ -2,93 +2,115 @@ window.onload = load;
 
 url = 'http://localhost:8080/get_pair'
 
-url_post = 'http://localhost:8080/send_pair'
+url_post = 'http://localhost:8080/compare_result'
 
-get_data;
+i = 0;
+
+json = []
+
+sendData = []
+
+function displayMovie(firstMovie, secondMovie){
+    document.getElementById("title1").innerHTML = firstMovie.title;
+    document.getElementById("title2").innerHTML = secondMovie.title;
+
+    document.getElementById("description1").innerHTML = firstMovie.description;
+    document.getElementById("description2").innerHTML = secondMovie.description;
+
+    document.getElementById("img1").src = firstMovie.movie_img_url;
+    document.getElementById("img2").src = secondMovie.movie_img_url;
+}
 
 function load()
 {
+    
+    json = JSON.parse(localStorage.getItem("movies"));
+    console.log(json);
 
+    console.log(json[i].firstMovie);
+    console.log(json[i].secondMovie);
+    
 
-    $.get(url, function(data, status){
-
-        console.log(data)
-
-        get_data=data;
-
-        if(data.key==null){
-            window.location = ('../templates/list_movie.html');
-        }
-        document.getElementById("title1").innerHTML = data.value.key.title;
-        document.getElementById("title2").innerHTML = data.value.value.title;
-
-        document.getElementById("description1").innerHTML = data.value.key.description;
-        document.getElementById("description2").innerHTML = data.value.value.description;
-
-        document.getElementById("img1").src = data.value.key.movie_img_url;
-        document.getElementById("img2").src = data.value.value.movie_img_url;
-    })
+    displayMovie(json[i].firstMovie, json[i].secondMovie);
 
 }
 
 function sendMovie1(){
-
-    console.log(get_data.key);
-    console.log(get_data.value.key.title);
-
-    data1 = {
-        "selected_movie": get_data.value.key.id,
-        "not_wanted_movie": get_data.value.value.id,
-        "intensity": document.getElementById("intensity").value,
-        "criteria": get_data.key
+    
+    movie = JSON.parse(localStorage.getItem("movies"));
+    pair = {
+        "mainCriteria": getMainCriteria(),
+        "pairCompareIntensity": document.getElementById("intensity").value, //todo
+        "selected": movie[i].first,
+        "notSelected": movie[i].second
     }
 
-    $.ajax({
-        type: 'post',
-        url: url_post,
-        data: data1,
-        success: function(){
-            console.log("succes");
-            //localStorage.setItem("movies", JSON.stringify(result))
-            window.location = ('../templates/pair_compare.html')
-        },
-        error: function(error){
-            console.log("errror wtf");
-            console.log(error) 
-            // window.location = ('test.html')
-       
-        }
-    })
+    sendData.push(pair);
 
-    
+    console.log(sendData);
+
+    i = i+1;
+
+    if (i>= json.length){
+        console.log(sendData);
+        sendD();
+        //window.location = ('../templates/list_movie.html');
+    }else{
+        displayMovie(json[i].firstMovie, json[i].secondMovie);
+    }
 }
 
 function sendMovie2(){
-
-    console.log(get_data.key);
-    console.log(get_data.value.value.title);
-
-    data2 = {
-        "selected_movie": get_data.value.value.id,
-        "not_wanted_movie": get_data.value.key.id,
-        "intensity": 5,
-        "criteria": get_data.key
+    
+    movie = JSON.parse(localStorage.getItem("movies"));
+    pair = {
+        "mainCriteria": getMainCriteria(),
+        "pairCompareIntensity": document.getElementById("intensity").value, //todo
+        "selected": movie[i].second,
+        "notSelected": movie[i].first
     }
 
+    sendData.push(pair);
+
+    console.log(sendData);
+
+    i = i+1;
+
+    if (i>= json.length){
+        console.log(sendData);
+        sendD();
+        //window.location = ('../templates/list_movie.html');
+    }else{
+        displayMovie(json[i].firstMovie, json[i].secondMovie);
+    }
+}
+
+function getMainCriteria(){
+    if(json[i].first[0]=="_"){
+        return 'YEAR';
+    }else{
+        return 'GENRE';
+    }
+}
+
+function sendD() {
+
+
     $.ajax({
-        type: 'post',
-        url: url_post,
-        data: data2,
-        success: function(){
-            console.log("succes");
-            //localStorage.setItem("movies", JSON.stringify(result))
-            window.location = ('../templates/pair_compare.html')
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+        },
+        dataType: 'json',
+        method: 'POST',
+        url: 'http://localhost:8080/compare_result',
+        data: JSON.stringify({"compareIntensities": sendData}),
+        success: function(movies){
+            console.log(movies);
         },
         error: function(error){
-            console.log("errror wtf");
-            console.log(error) 
-            // window.location = ('test.html')
-       
+            console.log("some error xd")
+            console.log(error);
         }
-    })
+    });
 }

@@ -2,7 +2,7 @@
 
 console.log('Poczatek');
 
-url = 'http://localhost:8080/form'
+url = 'http://localhost:8080/get_pairs'
 
 
 $('.btn_movie_form').click(function(){
@@ -36,12 +36,17 @@ $('.btn_movie_form').click(function(){
     }
 
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: url,
         data: data,
-        success: function(){
-            console.log("ddd");
+        success: function(result){
+            console.log(result[0]);
             //localStorage.setItem("movies", JSON.stringify(result))
+            
+
+            localStorage.setItem("movies", JSON.stringify(result));
+            localStorage.setItem("iterator", 0);
+
             window.location = ('../templates/pair_compare.html')
         },
         error: function(error){
