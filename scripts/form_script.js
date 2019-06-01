@@ -15,6 +15,10 @@ $('.btn_movie_form').click(function(){
     var input_year_intensity = document.getElementById('year_intensity').value;
     var input_rate_intensity = document.getElementById('rate_intensity').value;
 
+    localStorage.setItem("genre_intensity", input_genre_intensity);
+    localStorage.setItem("year_intensity", input_year_intensity);
+    localStorage.setItem("rate_intensity", input_rate_intensity);
+
     console.log(input_genre);
     console.log(input_start);
     console.log(input_end);

@@ -25,11 +25,7 @@ function load()
 {
     
     json = JSON.parse(localStorage.getItem("movies"));
-    console.log(json);
 
-    console.log(json[i].firstMovie);
-    console.log(json[i].secondMovie);
-    
 
     displayMovie(json[i].firstMovie, json[i].secondMovie);
 
@@ -47,12 +43,10 @@ function sendMovie1(){
 
     sendData.push(pair);
 
-    console.log(sendData);
 
     i = i+1;
 
     if (i>= json.length){
-        console.log(sendData);
         sendD();
         //window.location = ('../templates/list_movie.html');
     }else{
@@ -72,12 +66,9 @@ function sendMovie2(){
 
     sendData.push(pair);
 
-    console.log(sendData);
-
     i = i+1;
 
     if (i>= json.length){
-        console.log(sendData);
         sendD();
         //window.location = ('../templates/list_movie.html');
     }else{
@@ -95,6 +86,15 @@ function getMainCriteria(){
 
 function sendD() {
 
+    intensity_wrapper = {
+        "compareIntensities": sendData,
+        "genreIntensity": localStorage.getItem("genre_intensity"),
+        "yearIntensity": localStorage.getItem("year_intensity"),
+        "rateIntensity": localStorage.getItem("rate_intensity")
+    }
+
+    console.log(intensity_wrapper);
+
 
     $.ajax({
         headers: { 
@@ -104,7 +104,7 @@ function sendD() {
         dataType: 'json',
         method: 'POST',
         url: 'http://localhost:8080/compare_result',
-        data: JSON.stringify({"compareIntensities": sendData}),
+        data: JSON.stringify(intensity_wrapper),
         success: function(movies){
             console.log(movies);
         },
