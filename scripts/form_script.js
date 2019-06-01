@@ -50,8 +50,9 @@ $('.btn_movie_form').click(function(){
 
             localStorage.setItem("movies", JSON.stringify(result));
             localStorage.setItem("iterator", 0);
-
             window.location = ('../templates/pair_compare.html')
+
+
         },
         error: function(error){
             console.log("errror wtf");

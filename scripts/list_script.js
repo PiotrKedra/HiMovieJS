@@ -4,10 +4,11 @@
 function generateDynamicTable() {
 
     var Httpreq = new XMLHttpRequest(); // a new request
-    Httpreq.open("GET", "http://localhost:8080/get_top10", false);
-    Httpreq.send(null);
-    var movies = JSON.parse(Httpreq.responseText)
-
+    // Httpreq.open("GET", "http://localhost:8080/get_top10", false);
+    // Httpreq.send(null);
+    // var movies = JSON.parse(Httpreq.responseText)
+    var movies = JSON.parse(localStorage.getItem("movies"));
+    console.log(movies);
 
     var noOfMovies = movies.length;
 

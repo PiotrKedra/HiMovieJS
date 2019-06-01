@@ -107,6 +107,9 @@ function sendD() {
         data: JSON.stringify(intensity_wrapper),
         success: function(movies){
             console.log(movies);
+            localStorage.setItem("movies", JSON.stringify(movies));
+            window.location =  ('../templates/list_movie.html')
+
         },
         error: function(error){
             console.log("some error xd")
