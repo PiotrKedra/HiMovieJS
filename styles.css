@@ -4,7 +4,7 @@ body{
 }
 
 .div_start{
-    height: 100%;
+    height: device-height;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,3 +68,13 @@ label{
     background-color: rgb(84, 148, 207);
     width: 50%;
 }
+
+.formctrl{
+	width:25%;
+}
+
+.element1{display:inline-block;width:9%;text-align:center;} 
+.element2{display:inline-block;width:80%;}
+.element3{display:inline-block;width:9%;text-align:center;}
+
+

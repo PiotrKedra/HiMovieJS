@@ -8,8 +8,9 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="../styles.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet"> 
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet"> 
+  <link href="https://bootswatch.com/4/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
 
 <body>
     <div class="div_start">
@@ -17,44 +18,75 @@
             <h2>Podpowiedz nam trochę</h2>
            
                 <div class="form-group">
-                    <label>Wybierz kategorię</label>
-                    <select multiple class="form-control" id="category">
-                        <option>Komedia</option>
-                        <option>Dramat</option>
-                        <option>Sci-Fi</option>
+                    <label>Wybierz gatunek</label>
+                    <select multiple class="form-control" id="category" style="width:30%;">
+                        <option value="Comedy">Komedia</option>
+                        <option value="Drama">Dramat</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
                     </select>
 <!--                    <input type="text" class="form-control" id="category">-->
-                    <label for="category_intensity">Jak bardzo zależy ci na kategori?</label>
+
+                    <label for="category_intensity" style="font-size:1.1rem;">Jak bardzo zależy ci na gatunku?</label>
+					<br>
+					<div class="element1">1</div>
+					<div class="element2">
                     <input type="range" class="custom-range" min="1" max="9" step="2" id="category_intensity">
-                    <label>Wybierz przedział lat</label>
-                    <div class="div_year">
-                        <label class="lable_year" style="padding-top: 0; font-size: 1rem;">Start</label>
-                        <select class="form-control" id="start">
-                            <option>2000</option>
-                            <option>2001</option>
-                            <option>2002</option>
-                            <option>2003</option>
-                            <option>2004</option>
-                            <option>2005</option>
-                            <option>2006</option>
-                            <option>2007</option>
-                        </select>
-                        <label class="lable_year" style="padding-top: 0; font-size: 1rem;">Koniec</label> 
-                        <select class="form-control" id="end">
-                            <option>2010</option>
-                            <option>2011</option>
-                            <option>2012</option>
-                            <option>2013</option>
-                            <option>2014</option>
-                            <option>2015</option>
-                        </select>
                     </div>
-                    <label for="year_intensity">Jak bardzo zależy ci na przedziale czasowym?</label>
+					<div class="element3">10</div>
+					<label>Wybierz przedział lat</label>
+                    <div class="div_year">
+						<div class="formctrl">
+                        <select class="form-control" id="start">
+                            <option>1980</option>
+                            <option>1985</option>
+                            <option>1990</option>
+                            <option>1995</option>
+                            <option>2000</option>
+                            <option>2005</option>
+                            <option>2010</option>
+                            <option>2015</option>
+							<option>2016</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+                        </select>
+						</div>
+						<div>
+                        <label style="padding-top: 0; font-size: 1rem;">-</label> 
+                        </div>
+						<div class="formctrl">
+                        <select class="form-control" id="end">
+                            <option>1980</option>
+                            <option>1985</option>
+                            <option>1990</option>
+                            <option>1995</option>
+                            <option>2000</option>
+                            <option>2005</option>
+                            <option>2010</option>
+                            <option>2015</option>
+							<option>2016</option>
+							<option>2017</option>
+							<option>2018</option>
+							<option>2019</option>
+                        </select>
+						</div>
+                    </div>
+                    <label for="year_intensity" style="font-size:1.1rem;">Jak bardzo zależy ci na przedziale czasowym?</label>
+                    <br>
+					<div class="element1">1</div>
+					<div class="element2">
                     <input type="range" class="custom-range" min="1" max="9" step="2" id="year_intensity">
-                    <label>Podaj ocene filmu</label>
-                    <input type="text" class="form-control" id="rate">
-                    <label for="rate_intensity">Jak bardzo zależy ci na ocenie filmu?</label>
+                    </div>
+					<div class="element3">10</div>
+                    <label>Podaj ocenę filmu</label>
+					<input type="text" class="form-control" id="rate" style="width:30%;">
+                    <label for="rate_intensity" style="font-size:1.1rem;">Jak bardzo zależy ci na ocenie filmu?</label>
+                    <br>
+					<div class="element1">1</div>
+					<div class="element2">
                     <input type="range" class="custom-range" min="1" max="9" step="2" id="rate_intensity">
+                    </div>
+					<div class="element3">10</div>
                     <label>Wybierz kraje produkcji</label>
                     <select class="form-control" id="country">
                         <option>USA</option>
