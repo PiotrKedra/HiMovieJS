@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HiMovie</title>
+    <meta name="description" content="Find your movie">
+    <meta name="author" content="HiMovie">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link href="https://bootswatch.com/4/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1 class="text-center" style="margin-top: 5rem; font-size: 4rem; font-family:'impact', fantasy;">HiMovie</h1>
+<div class="div_start">
+    <div class="registration">
+        <h3 style="margin-bottom: -10px;">Rejestracja</h3>
+        <form name="registration">
+        <label for="registration_user" style="font-size:1rem;">Nazwa użytkownika:</label>
+        <input type="text" id="registration_user"><div id="user"></div><br>
+        <label for="registration_pwd" style="font-size:1rem;">Hasło:</label>
+        <input type="password" id="registration_pwd"><br>
+        <label for="registration_pwd2" style="font-size:1rem;">Powtórz hasło:</label>
+        <input type="password" id="registration_pwd2"><p id="pwd"></p><br><br>
+        <input type="button" onclick="formValidation()" value="Zarejestruj się" /><br>
+        </form>
+    </div>
+</div>
+<script src="../scripts/registration_script.js"></script>
+</body>
+</html>

@@ -13,9 +13,10 @@
   </head>
 
 <body>
+    <h1 class="text-center" style="margin-top: 5rem; font-size: 4rem; font-family:'impact', fantasy;">HiMovie</h1>
     <div class="div_start ">
         <div class="container justify-content">
-            <h2>Wybierz film który byś wolał obejrzeć</h2>
+            <h2 style="text-align:center;">Wybierz film który byś wolał obejrzeć</h2>
            
             <div class="row justify-content-md-center">
                 <div class="card" style="width: 15rem; height: 25rem; margin: 2rem;" id="movie1" onclick="sendMovie1()">
@@ -34,8 +35,10 @@
                 </div>
             </div>
 
-            <label for="intensity">Jak bardzo wolisz wybrany film?</label>
-            <input type="range" class="custom-range" min="1" max="9" step="2" id="intensity">
+            <label for="intensity" style="text-align:center;width:100%;">Jak bardzo wolisz wybrany film?</label>
+			<div class="element1">Bez różnicy</div>
+            <div class="element2"><input type="range" class="custom-range" min="1" max="9" step="2" id="intensity"></div>
+			<div class="element3">Zdecydowanie wybrany film</div>
             
 
         </div>

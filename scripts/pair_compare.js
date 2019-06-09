@@ -59,7 +59,7 @@ function sendMovie2(){
     movie = JSON.parse(localStorage.getItem("movies"));
     pair = {
         "mainCriteria": getMainCriteria(),
-        "pairCompareIntensity": document.getElementById("intensity").value, //todo
+        "pairCompareIntensity": document.getElementById("intensity").value,
         "selected": movie[i].second,
         "notSelected": movie[i].first
     }
