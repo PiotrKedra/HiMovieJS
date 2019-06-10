@@ -12,7 +12,8 @@
     <link href="https://bootswatch.com/4/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1 class="text-center" style="margin-top: 5rem; font-size: 4rem; font-family:'impact', fantasy;">HiMovie</h1>
+
+<div class="title_container"><h1 class="text-center" id="title" >HiMovie</h1></div>
 <div class="div_start">
     <div class="registration">
         <h3 style="margin-bottom: -10px;">Rejestracja</h3>
@@ -23,10 +24,14 @@
         <input type="password" id="registration_pwd"><br>
         <label for="registration_pwd2" style="font-size:1rem;">Powtórz hasło:</label>
         <input type="password" id="registration_pwd2"><p id="pwd"></p><br><br>
-        <input type="button" onclick="formValidation()" value="Zarejestruj się" /><br>
+        <input type="button" onclick="formValidation()" class="btn_custom" style="padding:0.5rem 1.5rem;" value="Zarejestruj się" /><br>
         </form>
     </div>
 </div>
 <script src="../scripts/registration_script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

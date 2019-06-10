@@ -1,10 +1,10 @@
-method = POST
-path = "localhost:8080/users/sign-up"
-consumes = application/json
-body =  {
-    "username": "nazwa",
-    "password": "haslo"
-}
+// method = POST
+path = "http://localhost:8080/users/sign-up";
+
+// body =  {
+//     "username": "nazwa",
+//     "password": "haslo"
+// }
 
 function formValidation(){
 
@@ -16,19 +16,39 @@ function formValidation(){
 
 
     if(password === password2 && isNaN(user[0]) && user.length>5 && password.length>6){
-        document.getElementById("pwd").innerHTML = "Rejestracja udana! Przekierowanie do logowania";
 
-        userJSON = JSON.parse(document.getElementById("registration_user").value);
-        passwordJSON = JSON.parse(document.getElementById("registration_pwd").value);
-        pair = {
-            "username": userJSON,
-            "password": passwordJSON
+
+        // userJSON = JSON.parse(document.getElementById("registration_user").value);
+        // passwordJSON = JSON.parse(document.getElementById("registration_pwd").value);
+        account = {
+            "username": user,
+            "password": password
         }
-        sendData.push(pair);
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            dataType: 'json',
+            method: 'POST',
+            url: path,
+            data: JSON.stringify(account),
+            success: function(result){
+                console.log(result);
+                setTimeout(function() {
+                    document.location.href = "login_page.html";
+                }, 3000);
+                document.getElementById("pwd").innerHTML = "Rejestracja udana! Przekierowanie do logowania";
+            },
+            error: function(error) {
+                console.log("errror w dupe");
+                console.log(error)
+                console.log(account[0].username);
+                document.getElementById("pwd").innerHTML = "Błąd ze strony serwera. Przepraszamy!";
+            }
+        })
 
-        setTimeout(function() {
-            document.location.href = "login_page.html";
-        }, 3000);
+
     }
 
     if(password.length<7){

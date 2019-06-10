@@ -13,21 +13,22 @@
   </head>
 
 <body>
-    <h1 class="text-center" style="margin-top: 5rem; font-size: 4rem; font-family:'impact', fantasy;">HiMovie</h1>
+<div class="title_container"><h1 class="text-center" id="title" style="margin-top:20px;" >HiMovie</h1></div>
     <div class="div_start ">
         <div class="container justify-content">
-            <h2 style="text-align:center;">Wybierz film który byś wolał obejrzeć</h2>
-           
+            <h2 style="text-align:center;">Co wolisz?</h2>
             <div class="row justify-content-md-center">
-                <div class="card" style="width: 15rem; height: 25rem; margin: 2rem;" id="movie1" onclick="sendMovie1()">
-                    <img class="card-img-top" alt="Card image cap" id="img1">
+                <div class="card" style="width: 15rem; height: 23rem; margin: 2rem;" id="movie1" onclick="sendMovie1()">
+                    <img class="card-img-top" alt="Card image cap" id="img1" style="height:16rem;">
+                    <div class = "img1desc"></div>
                     <div class="card-body">
                         <h5 class="card-title" id="title1"></h5>
                         <p class="card-text"  style="font-size: 8px;"  id="description1"></p>
                     </div>
                 </div>
-                <div class="card" style="width: 15rem; height: 25rem; margin: 2rem;" onclick="sendMovie2()">
-                    <img class="card-img-top" alt="Card image cap" id="img2">
+                <div class="card" style="width: 15rem; height: 23rem; margin: 2rem;" onclick="sendMovie2()">
+                    <img class="card-img-top" alt="Card image cap" id="img2" style="height:16rem;">
+                    <div class = "img2desc"></div>
                     <div class="card-body">
                         <h5 class="card-title" id="title2"></h5>
                         <p class="card-text" style="font-size: 8px;" id="description2"></p>

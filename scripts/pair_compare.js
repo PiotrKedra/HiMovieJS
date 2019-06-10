@@ -14,11 +14,29 @@ function displayMovie(firstMovie, secondMovie){
     document.getElementById("title1").innerHTML = firstMovie.title;
     document.getElementById("title2").innerHTML = secondMovie.title;
 
-    document.getElementById("description1").innerHTML = firstMovie.description;
-    document.getElementById("description2").innerHTML = secondMovie.description;
+    if(firstMovie.description.length<10){
+        document.getElementById("description1").innerHTML = "Brak opisu";
+    }else {
+        document.getElementById("description1").innerHTML = firstMovie.description;
+    }
+    if(secondMovie.description.length<10){
+        document.getElementById("description2").innerHTML = "Brak opisu";
+    }else {
+        document.getElementById("description2").innerHTML = secondMovie.description;
+    }
 
-    document.getElementById("img1").src = firstMovie.movie_img_url;
-    document.getElementById("img2").src = secondMovie.movie_img_url;
+    if(firstMovie.movie_img_url.length<10){
+        document.getElementById("img1desc").innerHTML = "Brak zdjęcia";
+    }else {
+        document.getElementById("img1").src = firstMovie.movie_img_url;
+    }
+
+    if(secondMovie.movie_img_url.length<10){
+        document.getElementById("img2desc").innerHTML = "Brak zdjęcia";
+    }else {
+        document.getElementById("img2").src = secondMovie.movie_img_url;
+    }
+
 }
 
 function load()

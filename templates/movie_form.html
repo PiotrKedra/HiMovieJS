@@ -13,17 +13,41 @@
   </head>
 
 <body>
-    <h1 class="text-center" style="margin-top: 5rem; font-size: 4rem; font-family:'impact', fantasy;">HiMovie</h1>
+
+<div class="title_container"><h1 class="text-center" id="title" >HiMovie</h1></div>
     <div class="div_start">
         <div>
             <h2>Podpowiedz nam trochę</h2>
            
                 <div class="form-group">
-                    <label>Wybierz gatunek</label>
-                    <select multiple class="form-control" id="category" style="width:30%;">
+                    <label>Wybierz gatunek </label><h6>(Wybór kilku: Przyrzymaj Ctrl)</h6>
+                    <select multiple class="form-control" id="category" style="width:50%;">
                         <option value="Komedia">Komedia</option>
                         <option value="Dramat">Dramat</option>
+                        <option value="Kryminał">Kryminał</option>
+                        <option value="Akcja">Akcja</option>
                         <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Dramat historyczny">Dramat historyczny</option>
+                        <option value="Animacja">Animacja</option>
+                        <option value="Familijny">Familijny</option>
+                        <option value="Wojenny">Wojenny</option>
+                        <option value="Melodramat">Melodramat</option>
+                        <option value="Katastroficzny">Katastroficzny</option>
+                        <option value="Psychologiczny">Psychologiczny</option>
+                        <option value="Gangsterki">Gangsterki</option>
+                        <option value="Biograficzny">Biograficzny</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Przygodowy">Przygodowy</option>
+                        <option value="Surrealistyczny">Surrealistyczny</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Western">Western</option>
+                        <option value="Komedia kryminalna">Komedia kryminalna</option>
+                        <option value="Sensacyjny">Sensacyjny</option>
+                        <option value="Dramat obyczajowy">Dramat obyczajowy</option>
+                        <option value="Kostiumowy">Kostiumowy</option>
+                        <option value="Muzyczny">Muzyczny</option>
+
                     </select>
 
 
@@ -38,18 +62,22 @@
                     <div class="div_year">
 						<div class="formctrl">
                         <select class="form-control" id="start">
-                            <option>1980</option>
-                            <option>1985</option>
-                            <option>1990</option>
-                            <option>1995</option>
-                            <option>2000</option>
-                            <option>2005</option>
-                            <option>2010</option>
-                            <option>2015</option>
-							<option>2016</option>
-							<option>2017</option>
-							<option>2018</option>
-							<option>2019</option>
+                            <option>1951</option>
+                            <option>1956</option>
+                            <option>1961</option>
+                            <option>1966</option>
+                            <option>1971</option>
+                            <option>1976</option>
+                            <option>1981</option>
+                            <option>1986</option>
+                            <option>1991</option>
+                            <option>1996</option>
+                            <option>2001</option>
+                            <option>2006</option>
+                            <option>2011</option>
+                            <option>2016</option>
+							 <option>2017</option>
+                            <option>2018</option>
                         </select>
 						</div>
 						<div>
@@ -57,22 +85,26 @@
                         </div>
 						<div class="formctrl">
                         <select class="form-control" id="end">
-                            <option>1980</option>
-                            <option>1985</option>
-                            <option>1990</option>
-                            <option>1995</option>
-                            <option>2000</option>
-                            <option>2005</option>
-                            <option>2010</option>
-                            <option>2015</option>
-							<option>2016</option>
-							<option>2017</option>
-							<option>2018</option>
-							<option>2019</option>
+                            <option>1956</option>
+                            <option>1961</option>
+                            <option>1966</option>
+                            <option>1971</option>
+                            <option>1976</option>
+                            <option>1981</option>
+                            <option>1986</option>
+                            <option>1991</option>
+                            <option>1996</option>
+                            <option>2001</option>
+                            <option>2006</option>
+                            <option>2011</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
                         </select>
 						</div>
                     </div>
-                    <label for="year_intensity" style="font-size:1.1rem;">Jak bardzo zależy ci na przedziale czasowym?</label>
+                    <label for="year_intensity" style="font-size:1.1rem;">Jak bardzo zależy ci na okresie produkcji?</label>
                     <br>
 					<div class="element1">1</div>
 					<div class="element2">
