@@ -88,6 +88,7 @@ label{
     margin-right:5%;
 
 
+
 }
 #movies th{
     text-align:center;
@@ -98,6 +99,25 @@ label{
     text-align:center;
 }
 
+
+#movies_seen{
+    position: relative;
+    left:1%;
+    top:1%;
+    margin-left:5%;
+    margin-right:5%;
+
+
+
+}
+#movies_seen th{
+    text-align:center;
+    font-size:1.5rem;
+}
+#movies_seen td{
+    min-width:160px;
+    text-align:center;
+}
 
 .custom-range{
     color: black;

@@ -15,12 +15,13 @@ function loginValidation() {
         xhr.open('POST', path, true);
         xhr.setRequestHeader('Content-Type','application/json; charset=UTF-8');
         xhr.addEventListener('load',function(){
-            var responseObject = this.response;
+            var responseObject = JSON.parse(this.response);
             console.log(responseObject);
             if(responseObject.token) {
-                tokenElement.innerHTML = responseObject.token;
+                localStorage.setItem("token", responseObject.token);
+                document.location.href = "menu_page.html";
             }else{
-                tokenElement.innerHTML = "No token received";
+                document.getElementById("comunicate").innerHTML = "Złe dane logowania";
             }
         });
         var sendObject = JSON.stringify({username: user, password: password});

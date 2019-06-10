@@ -44,8 +44,9 @@ function load()
     
     json = JSON.parse(localStorage.getItem("movies"));
 
-
+    console.log(json);
     displayMovie(json[i].firstMovie, json[i].secondMovie);
+
 
 }
 
