@@ -2,6 +2,8 @@
 
 console.log('Poczatek');
 
+document.getElementById("loading").style.visibility = "hidden";
+
 url = 'http://localhost:8080/get_pairs'
 
 
@@ -64,3 +66,8 @@ $('.btn_movie_form').click(function(){
 })
 
 console.log('Koniec');
+
+function loading(){
+    console.log('wylaczamy')
+    document.getElementById("loading").style.visibility = "visible";
+}
