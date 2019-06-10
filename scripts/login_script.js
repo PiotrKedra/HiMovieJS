@@ -1,21 +1,21 @@
 
 
-function loginValidation(){
+function loginValidation() {
     var path = "http://localhost:8080/login";
     var xhr = new XMLHttpRequest();
     var tokenElement = document.getElementById('token')
 
     var user = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-        account= {
-            "username": user,
-            "password": password
-        }
+    account = {
+        "username": user,
+        "password": password
+    }
 
         xhr.open('POST', path, true);
         xhr.setRequestHeader('Content-Type','application/json; charset=UTF-8');
         xhr.addEventListener('load',function(){
-            var responseObject = JSON.parse(this.reposne);
+            var responseObject = this.response;
             console.log(responseObject);
             if(responseObject.token) {
                 tokenElement.innerHTML = responseObject.token;
@@ -23,31 +23,31 @@ function loginValidation(){
                 tokenElement.innerHTML = "No token received";
             }
         });
-        var sendObject = JSON.stringify({name: user, password: password});
+        var sendObject = JSON.stringify({username: user, password: password});
 
         console.log('going to send', sendObject);
         xhr.send(sendObject);
 
 }
 
-
-        // $.ajax({
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //     },
-        //     dataType: 'json',
-        //     method: 'POST',
-        //     url: path,
-        //     data: JSON.stringify(account),
-        //     error: function(error) {
-        //         console.log("errror w dupe");
-        //         console.log(error.getResponseHeader("Authorization:"));
-        //         document.getElementById("communicate").innerHTML = "Błedne dane logowania";
-        //     }
-        //
-        // })
-
+//
+//     $.ajax({
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         dataType: 'json',
+//         method: 'POST',
+//         url: path,
+//         data: JSON.stringify(account),
+//         // error: function (error) {
+//         //     console.log("errror w dupe");
+//         //     console.log(error.getResponseHeader("Authorization:"));
+//         //     document.getElementById("communicate").innerHTML = "Błedne dane logowania";
+//         // }
+//
+//     }).complete(function())
+// }
 
 
 // success: function(result){
